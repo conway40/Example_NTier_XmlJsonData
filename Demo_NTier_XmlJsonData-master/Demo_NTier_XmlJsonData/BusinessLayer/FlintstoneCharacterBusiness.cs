@@ -81,6 +81,10 @@ namespace Demo_NTier_XmlJsonData.BusinessLayer
             return character;
         }
 
+        /// <summary>
+        /// Add a character
+        /// </summary>
+        /// <param name="character"></param>
         public void AddFlintstoneCharacter(FlintstoneCharacter character)
         {
             FileIoStatus = FileIoMessage.None;
@@ -90,6 +94,27 @@ namespace Demo_NTier_XmlJsonData.BusinessLayer
                 try
                 {
                     fsRepository.Add(character);
+                    FileIoStatus = FileIoMessage.Complete;
+                }
+                catch (Exception)
+                {
+                    FileIoStatus = FileIoMessage.FileAccessError;
+                }
+            }
+        }
+        /// <summary>
+        /// Delete a character
+        /// </summary>
+        /// <param name="character"></param>
+        public void DeleteFlintstoneCharacter(FlintstoneCharacter character)
+        {
+            FileIoStatus = FileIoMessage.None;
+
+            using (FlintstoneCharacterRepository fsRepository = new FlintstoneCharacterRepository())
+            {
+                try
+                {
+                    fsRepository.Delete(character.Id);
                     FileIoStatus = FileIoMessage.Complete;
                 }
                 catch (Exception)

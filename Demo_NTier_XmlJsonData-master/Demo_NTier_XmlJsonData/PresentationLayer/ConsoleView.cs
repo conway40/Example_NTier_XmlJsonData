@@ -95,7 +95,7 @@ namespace Demo_NTier_XmlJsonData.PresentationLayer
                         break;
 
                     case 'e':
-
+                        DisplayUpdateCharacter();
                         break;
 
                     case 'q':
@@ -114,6 +114,63 @@ namespace Demo_NTier_XmlJsonData.PresentationLayer
             } while (!quitApplication);
         }
 
+        static void DisplayUpdateCharacter()
+        {
+            DisplayScreenHeader("Update Character");
+
+            List<FlintstoneCharacter> characters = _fcBusiness.AllFlintstoneCharacters();
+
+            int id = DisplayGetCharacterIdFromList(characters);
+
+            FlintstoneCharacter character = _fcBusiness.FlintstoneCharacterById(id);
+
+            _fcBusiness.DeleteFlintstoneCharacter(character);
+
+            Console.Write("Id:");
+            character.Id = int.Parse(Console.ReadLine());
+            Console.Write("First Name:");
+            character.FirstName = Console.ReadLine();
+            Console.Write("Last Name:");
+            character.LastName = Console.ReadLine();
+            Console.Write("Age:");
+            character.Age = int.Parse(Console.ReadLine());
+            Console.Write("Gender(Male=1, Female=2, None=0):");
+            int gender = int.Parse(Console.ReadLine());
+            switch (gender)
+            {
+                case 0:
+                    character.Gender = FlintstoneCharacter.GenderType.None;
+                    break;
+                case 1:
+                    character.Gender = FlintstoneCharacter.GenderType.Male;
+                    break;
+                case 2:
+                    character.Gender = FlintstoneCharacter.GenderType.Female;
+                    break;
+                default:
+                    character.Gender = FlintstoneCharacter.GenderType.None;
+                    break;
+            }
+            Console.Write("Average Annual Gross:");
+            character.AverageAnnualGross = int.Parse(Console.ReadLine());
+            Console.Write("Description:");
+            character.Description = Console.ReadLine();
+
+
+            _fcBusiness.AddFlintstoneCharacter(character);
+
+            if (_fcBusiness.FileIoStatus == FileIoMessage.Complete)
+            {
+                Console.WriteLine($"{character.FirstName} added to the data.");
+            }
+            else
+            {
+                Console.WriteLine("Something went terribly wrong.");
+            }
+
+            DisplayMainMenuPrompt();
+        }
+
         static void DisplayDeleteCharacter()
         {
             DisplayScreenHeader("Delete Character");
@@ -124,6 +181,8 @@ namespace Demo_NTier_XmlJsonData.PresentationLayer
             int id = DisplayGetCharacterIdFromList(characters);
 
             FlintstoneCharacter character = _fcBusiness.FlintstoneCharacterById(id);
+
+            _fcBusiness.DeleteFlintstoneCharacter(character);
 
             DisplayMainMenuPrompt();
         }
@@ -266,6 +325,11 @@ namespace Demo_NTier_XmlJsonData.PresentationLayer
             Console.WriteLine($"Gender: {character.Gender}");
             Console.WriteLine($"Average Annual Gross: {character.AverageAnnualGross:c}");
             Console.WriteLine($"Description: \n{character.Description}");
+            Console.WriteLine("Grocery Items:");
+            foreach (GroceryItem item in character.GroceryList)
+            {
+                Console.WriteLine("\t" + item.Quantity + " " + item.Name);
+            }
         }
 
 
