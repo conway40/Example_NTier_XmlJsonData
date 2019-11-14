@@ -15,6 +15,9 @@ namespace Demo_NTier_XmlJsonData.PresentationLayer
     public class ConsoleView
     {
         private static FlintstoneCharacterBusiness _fcBusiness = new FlintstoneCharacterBusiness();
+
+        public static List<GroceryItem> GroceryList { get; private set; }
+
         public ConsoleView()
         {
             DisplayWelcomeScreen();
@@ -116,6 +119,9 @@ namespace Demo_NTier_XmlJsonData.PresentationLayer
 
         static void DisplayUpdateCharacter()
         {
+            string response1 = "g";
+            int response2 = 0;
+
             DisplayScreenHeader("Update Character");
 
             List<FlintstoneCharacter> characters = _fcBusiness.AllFlintstoneCharacters();
@@ -126,15 +132,17 @@ namespace Demo_NTier_XmlJsonData.PresentationLayer
 
             _fcBusiness.DeleteFlintstoneCharacter(character);
 
-            Console.Write("Id:");
+            character.GroceryList = new List<GroceryItem>();
+
+            Console.Write("Id: ");
             character.Id = int.Parse(Console.ReadLine());
-            Console.Write("First Name:");
+            Console.Write("First Name: ");
             character.FirstName = Console.ReadLine();
-            Console.Write("Last Name:");
+            Console.Write("Last Name: ");
             character.LastName = Console.ReadLine();
-            Console.Write("Age:");
+            Console.Write("Age: ");
             character.Age = int.Parse(Console.ReadLine());
-            Console.Write("Gender(Male=1, Female=2, None=0):");
+            Console.Write("Gender(Male=1, Female=2, None=0): ");
             int gender = int.Parse(Console.ReadLine());
             switch (gender)
             {
@@ -156,6 +164,37 @@ namespace Demo_NTier_XmlJsonData.PresentationLayer
             Console.Write("Description:");
             character.Description = Console.ReadLine();
 
+            Console.WriteLine("Enter Grocery list.");
+            Console.WriteLine("Enter quit to exit");
+            Console.WriteLine("");
+            Console.WriteLine("Item:");
+            while (response1 != "quit")
+            {
+                response1 = Console.ReadLine();
+                if (response1 != "quit")
+                {
+                    Console.WriteLine("Quantity:");
+                    response2 = int.Parse(Console.ReadLine());
+                    character.GroceryList.Add(new GroceryItem { Name = response1, Quantity = response2 });
+
+                }
+            }
+
+            //Console.WriteLine("Enter Grocery list.");
+            //Console.WriteLine("Item:");
+            //Console.WriteLine("Quantity:");
+            //Console.WriteLine("Enter quit to exit");
+            //while (response1 != "quit")
+            //{
+
+            //    response1 = Console.ReadLine();
+            //    if (response1 != "quit")
+            //    {
+            //        response2 = int.Parse(Console.ReadLine());
+            //        character.GroceryList.Add(new GroceryItem { Name = response1, Quantity = response2 });
+
+            //    }
+            //}
 
             _fcBusiness.AddFlintstoneCharacter(character);
 
@@ -189,7 +228,11 @@ namespace Demo_NTier_XmlJsonData.PresentationLayer
 
         static void DisplayAddCharacter()
         {
+            string response1 = "g";
+            int response2 = 0;
+
             FlintstoneCharacter character = new FlintstoneCharacter();
+            character.GroceryList = new List<GroceryItem>();
 
             DisplayScreenHeader("Add New Character");
 
@@ -222,6 +265,22 @@ namespace Demo_NTier_XmlJsonData.PresentationLayer
             character.AverageAnnualGross = int.Parse(Console.ReadLine());
             Console.Write("Description:");
             character.Description = Console.ReadLine();
+
+            Console.WriteLine("Enter Grocery list.");
+            Console.WriteLine("Item:");
+            Console.WriteLine("Quantity:");
+            Console.WriteLine("Enter quit to exit");
+            while (response1 != "quit")
+            {
+
+                response1 = Console.ReadLine();
+                if (response1 != "quit")
+                {
+                    response2 = int.Parse(Console.ReadLine());
+                    character.GroceryList.Add(new GroceryItem { Name = response1, Quantity = response2 });
+
+                }
+            }
 
             _fcBusiness.AddFlintstoneCharacter(character);
 
