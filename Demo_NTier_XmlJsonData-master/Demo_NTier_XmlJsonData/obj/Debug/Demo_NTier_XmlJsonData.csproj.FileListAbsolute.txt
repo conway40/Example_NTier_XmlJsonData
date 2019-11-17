@@ -22,3 +22,15 @@ C:\Users\conway40\Desktop\Example_NTier_XmlJsonData\Demo_NTier_XmlJsonData-maste
 C:\Users\conway40\Desktop\Example_NTier_XmlJsonData\Demo_NTier_XmlJsonData-master\Demo_NTier_XmlJsonData\obj\Debug\Demo_NTier_XmlJsonData.csproj.CopyComplete
 C:\Users\conway40\Desktop\Example_NTier_XmlJsonData\Demo_NTier_XmlJsonData-master\Demo_NTier_XmlJsonData\obj\Debug\Demo_NTier_XmlJsonData.exe
 C:\Users\conway40\Desktop\Example_NTier_XmlJsonData\Demo_NTier_XmlJsonData-master\Demo_NTier_XmlJsonData\obj\Debug\Demo_NTier_XmlJsonData.pdb
+C:\Users\Caitlin\Desktop\Example_NTier_XmlJsonData\Demo_NTier_XmlJsonData-master\Demo_NTier_XmlJsonData\bin\Debug\DataAccessLayer\DataXml\FlintstoneCharacters.xml
+C:\Users\Caitlin\Desktop\Example_NTier_XmlJsonData\Demo_NTier_XmlJsonData-master\Demo_NTier_XmlJsonData\bin\Debug\DataAccessLayer\DataJson\FlintstoneCharacters.json
+C:\Users\Caitlin\Desktop\Example_NTier_XmlJsonData\Demo_NTier_XmlJsonData-master\Demo_NTier_XmlJsonData\bin\Debug\Demo_NTier_XmlJsonData.exe.config
+C:\Users\Caitlin\Desktop\Example_NTier_XmlJsonData\Demo_NTier_XmlJsonData-master\Demo_NTier_XmlJsonData\bin\Debug\Demo_NTier_XmlJsonData.exe
+C:\Users\Caitlin\Desktop\Example_NTier_XmlJsonData\Demo_NTier_XmlJsonData-master\Demo_NTier_XmlJsonData\bin\Debug\Demo_NTier_XmlJsonData.pdb
+C:\Users\Caitlin\Desktop\Example_NTier_XmlJsonData\Demo_NTier_XmlJsonData-master\Demo_NTier_XmlJsonData\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Caitlin\Desktop\Example_NTier_XmlJsonData\Demo_NTier_XmlJsonData-master\Demo_NTier_XmlJsonData\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Caitlin\Desktop\Example_NTier_XmlJsonData\Demo_NTier_XmlJsonData-master\Demo_NTier_XmlJsonData\obj\Debug\Demo_NTier_XmlJsonData.csprojAssemblyReference.cache
+C:\Users\Caitlin\Desktop\Example_NTier_XmlJsonData\Demo_NTier_XmlJsonData-master\Demo_NTier_XmlJsonData\obj\Debug\Demo_NTier_XmlJsonData.csproj.CoreCompileInputs.cache
+C:\Users\Caitlin\Desktop\Example_NTier_XmlJsonData\Demo_NTier_XmlJsonData-master\Demo_NTier_XmlJsonData\obj\Debug\Demo_NTier_XmlJsonData.csproj.CopyComplete
+C:\Users\Caitlin\Desktop\Example_NTier_XmlJsonData\Demo_NTier_XmlJsonData-master\Demo_NTier_XmlJsonData\obj\Debug\Demo_NTier_XmlJsonData.exe
+C:\Users\Caitlin\Desktop\Example_NTier_XmlJsonData\Demo_NTier_XmlJsonData-master\Demo_NTier_XmlJsonData\obj\Debug\Demo_NTier_XmlJsonData.pdb

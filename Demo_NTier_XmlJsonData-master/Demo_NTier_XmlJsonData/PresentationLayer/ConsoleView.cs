@@ -165,15 +165,16 @@ namespace Demo_NTier_XmlJsonData.PresentationLayer
             character.Description = Console.ReadLine();
 
             Console.WriteLine("Enter Grocery list.");
-            Console.WriteLine("Enter quit to exit");
+            Console.WriteLine("Enter 'quit' to exit the grocery list.");
             Console.WriteLine("");
-            Console.WriteLine("Item:");
+            
             while (response1 != "quit")
             {
+                Console.WriteLine("Grocery Item:");
                 response1 = Console.ReadLine();
                 if (response1 != "quit")
                 {
-                    Console.WriteLine("Quantity:");
+                    Console.WriteLine("Quantity of Item:");
                     response2 = int.Parse(Console.ReadLine());
                     character.GroceryList.Add(new GroceryItem { Name = response1, Quantity = response2 });
 
@@ -267,15 +268,16 @@ namespace Demo_NTier_XmlJsonData.PresentationLayer
             character.Description = Console.ReadLine();
 
             Console.WriteLine("Enter Grocery list.");
-            Console.WriteLine("Item:");
-            Console.WriteLine("Quantity:");
-            Console.WriteLine("Enter quit to exit");
+            Console.WriteLine("Enter 'quit' to exit the grocery list.");
+            Console.WriteLine("");
+
             while (response1 != "quit")
             {
-
+                Console.WriteLine("Grocery Item:");
                 response1 = Console.ReadLine();
                 if (response1 != "quit")
                 {
+                    Console.WriteLine("Quantity of Item:");
                     response2 = int.Parse(Console.ReadLine());
                     character.GroceryList.Add(new GroceryItem { Name = response1, Quantity = response2 });
 
@@ -384,11 +386,15 @@ namespace Demo_NTier_XmlJsonData.PresentationLayer
             Console.WriteLine($"Gender: {character.Gender}");
             Console.WriteLine($"Average Annual Gross: {character.AverageAnnualGross:c}");
             Console.WriteLine($"Description: \n{character.Description}");
-            Console.WriteLine("Grocery Items:");
-            foreach (GroceryItem item in character.GroceryList)
+            if (character.GroceryList != null)
             {
-                Console.WriteLine("\t" + item.Quantity + " " + item.Name);
+                Console.WriteLine("Grocery Items:");
+                foreach (GroceryItem item in character.GroceryList)
+                    {
+                        Console.WriteLine("\t" + item.Quantity + " " + item.Name);
+                    }
             }
+            
         }
 
 
